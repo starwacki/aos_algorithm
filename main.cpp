@@ -2,8 +2,10 @@
 #include <list>
 using namespace std;
 #include <set>
+#include <string>
 
-void orderOfExecution(int N,int K) {
+int orderOfExecution(int N,int K) {
+    
     // Create a set
     set<int> V;
 
@@ -45,28 +47,26 @@ void orderOfExecution(int N,int K) {
         abc++;
 
     }
-
-    // Print the first element of the set
-    cout << number << " \n";
+    return number;
 }
 
 //Driver Function.
 
 int main() {
-  int n[10000];
-  int k[10000];
+  string answer;
   int lines;
+  int n;
+  int k;
   cin >> lines;
 
   for (int i = 0; i < lines; i++) {
-    cin >> n[i];
-    cin >> k[i];   
+    cin >> n;
+    cin >> k;
+    answer.append(to_string(orderOfExecution(n,k)));
+    answer.append("\n");
   }
-  
-  for (int i = 0; i < lines; i++) {
-    orderOfExecution(n[i],k[i]);
-  }
-  
+
+  cout << answer;
   
   return 0;
-} 
+}
